@@ -7,9 +7,6 @@
 --cta-color:rgba(0, 123, 255, 1);
 --cta-hover:rgb(0, 77, 160);
 --hover-color:rgba(0, 0, 0, 0.2);
---orb-color-1:;
---orb-color-2:;
---orb-color-3:;
 }
 
 ::-webkit-scrollbar {
@@ -122,6 +119,12 @@ nav .cta-button:hover{
     display: none;
 }
 
+
+nav a.active {
+  border-bottom: 4px solid var(--main-color);
+  background-color: var(--hover-color);
+  transition: all 0.3s ease-in-out;
+}
 /* Navbar Ende */
 /* Header Ende */
 
@@ -289,7 +292,7 @@ section{
     width: auto;
     height: 100%;
     padding: 0 5%;
-    z-index: 3;
+    z-index: 4;
 }
     .hero-text h1{
         font-size: 7rem;
@@ -361,8 +364,7 @@ section{
         justify-content: center;
         border-radius: 17px;
       }
-    
-      /* Drei kleine Punkte oben (ähnlich Browser-Tabs) */
+
       .hero-top-bar {
         position: absolute;
         top: 10px;
@@ -377,7 +379,6 @@ section{
         border-radius: 50%;
       }
     
-      /* Simpler Code-Inhalt */
       .tablet-code-content {
         color: rgba(255, 255, 255, 0.5);
         text-align: center;
@@ -398,7 +399,7 @@ section{
         font-size: 1.1rem;
       }
     
-      /* Kleiner Kreis als Home-Button */
+
       .tablet-home-button {
         position: absolute;
         bottom: 10px;
@@ -420,7 +421,7 @@ section{
         width: 100%;
         height: 100%;
         display: block;
-        filter: drop-shadow(0 -8px 20px rgba(0, 0, 0, 0.5)); /* optional für Tiefe */
+        filter: drop-shadow(0 -8px 20px rgba(0, 0, 0, 0.5));
         
       }
     /* Ende Hero section */
@@ -441,12 +442,13 @@ section{
       /* Karte */
       .about-me-card-wrapper {
         min-width: 300px;
+        margin:auto;
         width: 40%;
         max-width: 700px;
         padding: 0 30px;
         height: 350px;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: flex-end;
         position: relative;
       }
@@ -476,6 +478,7 @@ section{
         z-index: 1;
         background-color: rgba(0, 0, 0, 0.12);
         backdrop-filter: blue(40px);
+        transition: all 0.3s ease-in-out;
       }
       
       .card2 {
@@ -485,9 +488,22 @@ section{
         z-index: 4;
         background:url("Images/mypic.jpeg")
           center center/cover no-repeat;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .card1:hover{
+        transform: scale(1.01) rotate(-6deg);
+        z-index: 3;
+        border-color: #6f7bf5;
+        
+      }
+      .card2:hover{
+        transform: scale(1.03) rotate(3deg);
+        z-index: 3;
+        border-color: #6f7bf5;
+        
       }
       
-      /* Text Wrapper */
       .about-me-text-wrapper {
         max-width: 800px;
         width: 100%;
@@ -497,13 +513,27 @@ section{
         justify-content: flex-start;
         position: relative;
         margin-top:10px;
+        z-index:5;
       }
-
-      
+  
       .about-me-text {
         color: rgb(255, 255, 255);
+        z-index:5;
       }
-      
+      .about-me-text > div {
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: border 0.3s ease;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        
+      }
+      .about-me-text > div:hover {
+        border: 2px solid white;
+        background:rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(40px);
+        box-sizing: border-box;
+      }
       .about-me-text h3 {
         font-weight: 600;
         font-size: 26px;
@@ -527,7 +557,7 @@ section{
     }
     
     .section-glow-1 {
-        width: 600px;
+        width: 300px;
         height: 200px;
         top: 20%;
         left: 40%;
@@ -702,6 +732,14 @@ section{
     box-shadow: inset 0px 0px 5px var(--main-color);
     color: var(--text-color-white);
   }
+
+  .skills-wrapper:hover{
+    box-shadow:
+    inset 0px 0px 10px var(--main-color),
+    1px 2px 20px rgb(2, 0, 49);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+  }
   
   .skills-container {
     display: flex;
@@ -763,34 +801,6 @@ section{
     filter: blur(80px);
     animation: floatGlow 12s ease-in-out infinite alternate;
   }
-  
-  .section-glow-1 {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: 5%;
-  }
-  
-  .section-glow-2 {
-    width: 250px;
-    height: 250px;
-    top: 60%;
-    left: 10%;
-  }
-  
-  .section-glow-3 {
-    width: 300px;
-    height: 300px;
-    top: 20%;
-    right: 10%;
-  }
-  
-  .section-glow-4 {
-    width: 200px;
-    height: 200px;
-    top: 70%;
-    right: 5%;
-  }
 
 
   .card-grid {
@@ -801,14 +811,14 @@ section{
     padding: 0 30px;
     max-width: 1720px;
     margin: auto;
-    align-items: center;
+    align-items: strech;
     margin-bottom: 50px;
   }
 
   .card-wrapper {
     position: relative;    /* Pseudo-Element braucht position: relative */
     width: 380px;
-    min-width: 280px;
+    min-width: 300px;
     border-radius: 10px;
     overflow: hidden;      /* Damit der Rahmen mit abgerundeten Ecken abschließt */
     background: rgba(255, 255, 255, 0.1);
@@ -816,40 +826,40 @@ section{
     box-shadow: inset 0px 0px 5px var(--main-color);
     z-index:3;
   }
+
+  .card-wrapper:hover{
+    box-shadow:
+    inset 0px 0px 10px var(--main-color),
+    1px 2px 20px rgb(2, 0, 49);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+  }
   
-  /* Das Pseudo-Element, das den Inset-Schatten trägt */
   .card-wrapper::before {
     content: "";
     position: absolute;
-    inset: 0; /* füllt die gesamte .card-wrapper */
-    pointer-events: none; /* Klicks gehen durch */
-    z-index: 5;          /* höher als img (z-index: 1) */
-    
-    /* Hier kommt dein Inset-Schatten in Blau */
+    inset: 0; 
+    pointer-events: none;
+    z-index: 5; 
     box-shadow: inset 0 0 5px 2px rgba(0,123,255,0.8);
-    
-    /* Wenn du möchtest, dass die Mitte durchsichtig bleibt: */
-    /* Oder mit linear-gradient, falls du Effekte willst. */
   }
-  
-  /* Das Bild darunter (kein extra z-index) */
+
   .card-wrapper img {
     display: block;
     width: 100%;
     height: 200px;
     object-fit: cover;
     position: relative;
-    z-index: 4;  /* liegt UNTER dem ::before */
+    z-index: 4; 
     box-shadow: 0px 0px 5px black;
     border-radius: 10px 10px 10px;
   }
-  
-  /* Falls du noch Inhalt hast, kann er noch höher liegen */
+
   .card-content {
     position: relative;
     z-index: 3;
     color:var(--text-color-white);
-    /* dein Text oder Buttons */
+
   }
   .card-title {
     margin: 10px 20px;
@@ -869,6 +879,7 @@ section{
   .card-badges {
     color:var(--text-color-white);
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     margin: 0 20px 20px;
   }
@@ -1039,10 +1050,20 @@ section{
       display: flex;
       flex-direction: row;
       gap:20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      background-color: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-item:hover{
+      backdrop-filter:blur(40px);
+      background-color: rgba(255, 255, 255, 0.2) ;
     }
   
     .contact-item svg{
-      fill:#765397;
+      fill:#ffffff;
       width:40px;
       height:auto;
 
@@ -1196,32 +1217,34 @@ section{
     footer{
       background-color: #000;
     }
-
+  
 
     .footer-wrapper{
       display: grid;
       grid-template-columns: repeat(3,1fr);
       min-height:80px;
-      align-items: center;
+      text-align: center;
       color:var(--text-color-white);
       font-size: 12px;
-      text-wrap: nowrap;
-      padding: 20px 
+      padding: 20px;
     }
-    .footer-copyright{
+    .footer-copyright {
       display: flex;
       justify-content: flex-start;
+      align-items: center;
     }
-
-    .footer-madeby{
+    
+    .footer-madeby {
       display: flex;
       justify-content: center;
+      align-items: center;
     }
-
-    .footer-icon-wrapper{
-      display: flex;;
-      gap:10px;
+    
+    .footer-icon-wrapper {
+      display: flex;
       justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
     }
 
     .footer-icon-wrapper svg{
@@ -1232,15 +1255,6 @@ section{
       gap:10px;
 
     }
-    .footer-copyright ,.footer-madeby , .footer-icon-wrapper{
-      justify-content: center;
-    }
-    .col-1 { grid-area: col1; }
-    .col-2 { grid-area: col2; }
-    .col-3 { grid-area: col3; }
-
-  
-
 
 
     /*Media Queries*/
@@ -1377,9 +1391,20 @@ section{
         .footer-wrapper{
           grid-template-columns: repeat(1,1fr);
           row-gap:1rem;
-          grid-template-areas:"col3" "col2" "col1";
         }
-    }
+        .footer-copyright ,.footer-madeby , .footer-icon-wrapper{
+          justify-content: center;
+        }
+
+        .footer-icon-wrapper{
+          order:1;
+        }
+        .footer-madeby{
+          order:2;
+        }
+        .footer-copyright{
+          order:3;
+        }
 
     @media (max-width: 900px){
         .hero-text h2{
@@ -1414,4 +1439,6 @@ section{
             width: 80%;
 
         }
+      }
+
       }

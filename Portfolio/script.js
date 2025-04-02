@@ -1,4 +1,35 @@
-  //Kontakt JS
+ // Navbar
+ document.addEventListener("DOMContentLoaded", function () {
+  // Vorhandener Kontakt-Code bleibt!
+
+  // Scrollspy-Code
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+        });
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  sections.forEach(section => observer.observe(section));
+});
+
+
+// Beobachtung starten
+sections.forEach(section => {
+  observer.observe(section);
+});
+ 
+ 
+ //Kontakt JS
 
   document.addEventListener("DOMContentLoaded", function () {
     const contactInputs = document.querySelectorAll(".contact-form-textbox input, .contact-form-textbox textarea");
@@ -15,3 +46,5 @@
       });
     }
   });
+
+
