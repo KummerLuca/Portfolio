@@ -42,6 +42,8 @@ html{
 }
 body{
     overflow-x: hidden;
+    width: 100vw;
+    height: 100%;
 }
 
 
@@ -133,6 +135,7 @@ nav a.active {
 main{
     position: relative;
     background: #000;
+    overflow-x:hidden
 }
 
 section{
@@ -173,7 +176,8 @@ section{
 /*Hero Start */
 
 #hero{
-    overflow-y:visible;
+    
+    
     max-height: 105vh;
     padding:0 10%;
     background-image: linear-gradient(
@@ -184,17 +188,6 @@ section{
         hsl(206deg 86% 74%) 71%,
         hsl(226deg 82% 81%) 84%,
         hsl(246deg 72% 87%) 100%);
-}
-
-#hero::before{
-    content:"";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    z-index: 1;
 }
 
 
@@ -268,7 +261,7 @@ section{
 /* Orb Ende */
 
 .hero-wrapper{
-    height: 110dvh;
+    height: 110vh;
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
@@ -721,7 +714,7 @@ section{
   .skills-wrapper {
     width: 100%;
     z-index: 3;
-    max-width: 400px;
+    max-width: 500px;
     min-height: 240px;
     border-radius: 10px;
     overflow: hidden;
@@ -731,14 +724,13 @@ section{
     border: 1px solid var(--main-color);
     box-shadow: inset 0px 0px 5px var(--main-color);
     color: var(--text-color-white);
+    transition: all 0.75s ease;
   }
 
   .skills-wrapper:hover{
     box-shadow:
-    inset 0px 0px 10px var(--main-color),
-    1px 2px 20px rgb(2, 0, 49);
-    transform: scale(1.01);
-    transition: all 0.3s ease;
+    inset 0px -3px 10px var(--main-color),
+    1px 2px 10px rgba(255, 255, 255, 0.267);
   }
   
   .skills-container {
@@ -756,18 +748,18 @@ section{
   }
   
   .skills-title h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
   }
   
   .skills-title p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
   }
   
   .skills-text {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   
   .skills-bar {
@@ -780,7 +772,7 @@ section{
   }
   
   .skills-fill {
-    background-image: linear-gradient(76.3deg, rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8%);
+    background-image: linear-gradient(76.3deg,rgb(25, 0, 165) 12.6%, rgb(0, 140, 255)  82.8%);
     height: 100%;
   }
 
@@ -825,14 +817,15 @@ section{
     backdrop-filter: blur(40px);
     box-shadow: inset 0px 0px 5px var(--main-color);
     z-index:3;
+    transition: all 0.3s ease;
   }
 
   .card-wrapper:hover{
     box-shadow:
     inset 0px 0px 10px var(--main-color),
-    1px 2px 20px rgb(2, 0, 49);
-    transform: scale(1.01);
-    transition: all 0.3s ease;
+    1px 2px 10px rgba(255, 255, 255, 0.205);
+
+    
   }
   
   .card-wrapper::before {
@@ -853,6 +846,14 @@ section{
     z-index: 4; 
     box-shadow: 0px 0px 5px black;
     border-radius: 10px 10px 10px;
+  }
+
+  .card-wrapper img::before{
+    content: "";
+    display:flex;
+    width: 100%;
+    height: 100%;
+    background-color: #00000036;
   }
 
   .card-content {
