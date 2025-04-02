@@ -1081,7 +1081,7 @@ section{
   
     .contact-form-wrapper {
       position: relative;
-      z-index: 3;
+      z-index: 4;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(40px);
       border: 2px solid var(--main-color);

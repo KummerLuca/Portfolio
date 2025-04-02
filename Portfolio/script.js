@@ -1,8 +1,5 @@
- // Navbar
- document.addEventListener("DOMContentLoaded", function () {
-  // Vorhandener Kontakt-Code bleibt!
-
-  // Scrollspy-Code
+document.addEventListener("DOMContentLoaded", function () {
+  // Scrollspy
   const sections = document.querySelectorAll("main section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -20,29 +17,19 @@
   });
 
   sections.forEach(section => observer.observe(section));
-});
 
+  // Kontakt
+  const contactInputs = document.querySelectorAll(".contact-form-textbox input, .contact-form-textbox textarea");
 
-// Beobachtung starten
-sections.forEach(section => {
-  observer.observe(section);
-});
- 
- 
- //Kontakt JS
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const contactInputs = document.querySelectorAll(".contact-form-textbox input, .contact-form-textbox textarea");
-  
-    if (contactInputs.length > 0) {
-      contactInputs.forEach((input) => {
-        input.addEventListener("input", function () {
-          if (this.value.trim() !== "") {
-            this.classList.add("filled");
-          } else {
-            this.classList.remove("filled");
-          }
-        });
+  if (contactInputs.length > 0) {
+    contactInputs.forEach((input) => {
+      input.addEventListener("input", function () {
+        if (this.value.trim() !== "") {
+          this.classList.add("filled");
+        } else {
+          this.classList.remove("filled");
+        }
       });
-    }
-  });
+    });
+  }
+});
