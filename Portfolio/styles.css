@@ -547,6 +547,7 @@ section{
         background: radial-gradient(circle, rgba(0, 123, 255, 0.8), transparent 60%);
         z-index: 0;
         transform: translate(-50%, -50%);
+        pointer-events: none;
     }
     
     .section-glow-1 {
@@ -1127,7 +1128,7 @@ section{
       translate: 0 -50%;
       transform-origin: 0 50%;
       pointer-events: none;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.4);
       font-weight: 400;
     }
     .area label {

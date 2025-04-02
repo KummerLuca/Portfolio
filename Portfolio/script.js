@@ -46,5 +46,3 @@ sections.forEach(section => {
       });
     }
   });
-
-
