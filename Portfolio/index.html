@@ -20,6 +20,7 @@
     <title>Luca Kummer | Webentwickler Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -33,6 +34,14 @@
         ]
       }
       </script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+      <script type="text/javascript">
+        (function(){
+           emailjs.init({
+             publicKey: "8EQAUGRj8TUwtlT21",
+           });
+        })();
+     </script>
 
       <meta name="theme-color" content="#0f0f0f">
 </head>
@@ -473,33 +482,38 @@
                 </div>
                 
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" action="https://formsubmit.co/lucakummer2004@gmail.com" method="POST">
-                      <input type="hidden" name="_next" value="https://lucadev.netlify.app">
-                      <input type="hidden" name="_captcha" value="false">
+                    <form class="contact-form" id="contact-form">
                       <div class="contact-form-textbox">
-                        <input required type="name" name="name" />
+                        <input required type="name" name="name" id="name"/>
                         <label>Name</label>
                         </div>
                     <div class="contact-form-textbox">
-                        <input  type="email" required name="email"/>
+                        <input  type="email" required name="email" id="email"/>
                         <label>Email</label>
                     </div>
                     <div class="contact-form-textbox">
-                        <input  type="name" name="Telefon"/>
+                        <input  type="name" name="phone" id="phone"/>
                         <label>Telefon<span> (optional)</span></label>
+                    </div>
+
+                    <div class="contact-form-textbox space">
+                      <input  type="name" name="subject" id="subject" required>
+                      <label>Betreff</label>
                     </div>
                         
                     <div class="contact-form-textbox area">
-                        <textarea required name="nachricht"></textarea>
+                        <textarea required name="message" id="message"></textarea>
                         <label>Deine Nachricht</label>
                     </div>
-                        <button type="submit">
+                        <button type="submit" id="send-button">
                             
                             <p>Senden</p>
                         </button>
                     </form>
+                    
                 </div>
             </div>
+            <script src="mail.js" defer></script>
         </section>
     </main>
 

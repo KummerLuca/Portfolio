@@ -1115,6 +1115,10 @@ section{
     .contact-form-textbox {
       position: relative;
     }
+
+    .space{
+      margin-top:20px;
+    }
     
     label,
     input {
@@ -1213,6 +1217,16 @@ section{
     .contact-form-wrapper button:hover span {
       opacity: 1;
       translate: 20px -50%;
+    }
+
+    #send-button.success {
+      background-color: #28a745 !important; /* grün */
+      color: white;
+    }
+    
+    #send-button.error {
+      background-color: #dc3545 !important; /* rot */
+      color: white;
     }
   
 
