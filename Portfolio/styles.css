@@ -3,7 +3,7 @@
 :root{
 --text-color-white:white;
 --text-color-black:black;
---main-color:rgba(0, 123, 255, 0.8);;
+--main-color:rgba(0, 123, 255, 1);;
 --cta-color:rgba(0, 123, 255, 1);
 --cta-hover:rgb(0, 77, 160);
 --hover-color:rgba(0, 0, 0, 0.2);
@@ -30,10 +30,10 @@
 
 
 *, html, body{
-    background-color: #0a0a0a;
+
     margin: 0;
     padding:0;
-    height: 100%;
+
     box-sizing: border-box;
 }
 
@@ -47,7 +47,7 @@ body{
     width: 100vw;
     height: 100%;
     padding-bottom: env(safe-area-inset-bottom);
-  background-color: #0a0a0a;
+    background-color: #0a0a0a;
 }
 
 
@@ -80,7 +80,27 @@ body{
     align-items: center;
 }
 
+.nav-link{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: var(--text-color-white);
+    transition: 0.2s ease-in-out;
+    flex: 0 0 auto;
+}
+
+.links-container {
+  --nav-link-width: max-content;
+}
+.nav-link {
+  width: max-content;
+}
+
 nav a{
+    
     height: 100%;
     padding: 0 1rem;
     display: flex;
@@ -88,7 +108,7 @@ nav a{
     align-items: center;
     text-decoration: none;
     color:var(--text-color-white);
-    transition: border-bottom 0.2s ease;
+    transition: 0.2s ease-in-out;
 }
 
 nav a:hover{
@@ -110,6 +130,7 @@ nav .logo-link:hover{
 nav .cta-button{
     background-color: var(--cta-color);
     border-bottom: 4px solid transparent;
+    transition: 0.3s ease-in-out;
 }
 
 nav .cta-button:hover{
@@ -126,8 +147,9 @@ nav .cta-button:hover{
 }
 
 
+
 nav a.active {
-  border-bottom: 4px solid var(--main-color);
+  
   background-color: var(--hover-color);
   transition: all 0.3s ease-in-out;
 }
@@ -812,16 +834,19 @@ section{
   .zertifikat-button{
     display:flex;
     justify-content: center;
-    padding:10px 20px;
+    padding:25px 30px;
     background-color: var(--main-color);
     color:var(--text-color-white);
     text-decoration: none;
     width: 250px;
     margin: auto;
     border-radius: 10px;
-    z-index:6A;
+    z-index:6;
+    transition: 0.2s ease;
   }
-
+  .zertifikat-button:hover{
+    background-color: var(--cta-hover);
+  }
 
   .card-grid {
     display: flex;
