@@ -33,5 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  let maxWidth = 0;
+
+  navLinks.forEach(link => {
+    const width = link.offsetWidth;
+    if (width > maxWidth) maxWidth = width;
+  });
+
+  navLinks.forEach(link => {
+    link.style.width = `${maxWidth}px`;
+  });
+
 
 });
