@@ -75,32 +75,25 @@ body{
     max-width: 1920px;
     width: 100%;
     display:flex;
+    
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
 }
 
 .nav-link{
-
+    
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px 15px;
     text-decoration: none;
     color: var(--text-color-white);
     transition: 0.2s ease-in-out;
     flex: 0 0 auto;
 }
 
-.links-container {
-  --nav-link-width: max-content;
-}
-.nav-link {
-  width: max-content;
-}
-
 nav a{
-    
     height: 100%;
     padding: 0 1rem;
     display: flex;
@@ -312,6 +305,7 @@ section{
     height: 100%;
     padding: 0 5%;
     z-index: 4;
+    pointer-events: none
 }
     .hero-text h1{
         font-size: 7rem;
@@ -353,6 +347,7 @@ section{
         justify-content: center;
         z-index: 3;
         box-sizing: border-box;
+        pointer-events: none
 }
     
     .hero-tablet {
@@ -834,11 +829,11 @@ section{
   .zertifikat-button{
     display:flex;
     justify-content: center;
-    padding:25px 30px;
+    padding:20px 0;
     background-color: var(--main-color);
     color:var(--text-color-white);
     text-decoration: none;
-    width: 250px;
+    max-width: 500px;
     margin: auto;
     border-radius: 10px;
     z-index:6;
@@ -1341,9 +1336,6 @@ section{
 
       @media (max-width: 900px) {
 
-        .navbar{
-            padding-left: 1%;
-        }
         .links-container{
             
             flex-direction: column;
@@ -1353,7 +1345,7 @@ section{
             top: 0;
             right: -100%;
             z-index: 10;
-    
+            padding: 10px;
             width: 400px;
             max-width: 100%;
     
@@ -1389,7 +1381,6 @@ section{
         
         .logo-mobile{
             display: flex;
-            padding-left:10px;
             justify-content: flex-start;
             align-items: center;
             height:100%;
@@ -1422,6 +1413,7 @@ section{
             justify-content: center;
             margin-bottom: 10px;
             border-bottom: 5px solid transparent
+            
         }
 
         nav a:hover{
